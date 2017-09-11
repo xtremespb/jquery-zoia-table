@@ -1,0 +1,34 @@
+{
+	"total": 18,
+    "items": [
+    {
+        "_id": "11",
+        "name": "Aleksei Nazar",
+        "email": "demo11@example.com",
+        "status": 1
+    },
+    {
+        "_id": "12",
+        "name": "Vasyl Kostyantyn",
+        "email": "demo12@example.com",
+        "status": 1
+    },
+    {
+        "_id": "13",
+        "name": "Yaroslav Olexiy",
+        "email": "demo13@example.com",
+        "status": 1
+    },
+    {
+        "_id": "14",
+        "name": "Wasyl Adam",
+        "email": "demo14@example.com",
+        "status": 1
+    },
+    {
+        "_id": "15",
+        "name": "Yaroslav Yevheniy",
+        "email": "demo15@example.com",
+        "status": 1
+    }]
+}

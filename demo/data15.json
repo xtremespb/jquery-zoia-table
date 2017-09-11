@@ -1,0 +1,22 @@
+{
+	"total": 18,
+    "items": [
+    {
+        "_id": "16",
+        "name": "Nazar Fedir",
+        "email": "demo16@example.com",
+        "status": 1
+    },
+    {
+        "_id": "17",
+        "name": "Miron Ivan",
+        "email": "demo17@example.com",
+        "status": 1
+    },
+    {
+        "_id": "18",
+        "name": "Serhiy Oleksandr",
+        "email": "demo18@example.com",
+        "status": 1
+    }]
+}
