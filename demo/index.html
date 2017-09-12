@@ -37,6 +37,45 @@
                 <div class="table1Pagination za-margin-top noselect"></div>
             </li>
             <li>
+                <div class="za-overflow-auto" style="height:383px">
+                    <p>HTML code for table:</p>
+                    <pre><code class="html">
+&lt;table class="za-table za-table-divider za-table-striped za-table-hover za-table-responsive za-table-middle" id="table1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th id="table1_name"&gt;name&lt;/th&gt;
+            &lt;th id="table1_email"&gt;E-mail&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="table1Pagination za-margin-top noselect"&gt;&lt;/div&gt;
+                </code></pre>
+                    <p>JavaScript:</p>
+                    <pre><code class="javascript">
+$('#table1').zoiaTable({
+    url: '/your/data/source',
+    limit: 5,
+    fields: {
+        name: {
+            sortable: false,
+            process: (id, item, value) => {
+                return value;
+            }
+        },
+        email: {
+            sortable: false,
+            process: (id, item, value) => {
+                return value;
+            }
+        }
+    }
+});
+                </code></pre>
+                    </code>
+                    </pre>
+                </div>
             </li>
         </ul>
         <p>You may also add client-side value processing and checkboxes like this:</p>
@@ -111,12 +150,8 @@ $('#table2').zoiaTable({
                 }
             }
         }
-    },
-    lang: {
-        error: 'Could not load data from server. Please try to refresh page in a few moments.',
-        noitems: 'No items to display'
     }
-});              
+});
                 </code></pre>
                 </div>
             </li>
