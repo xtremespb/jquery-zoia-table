@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ locale }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>zoiaTable Demo</title>
     <link rel="stylesheet" href="uikit.min.css" />
+    <link rel="stylesheet" href="default.css" />
 </head>
 
 <body>
@@ -15,8 +16,8 @@
         <h2>Basic usage</h2>
         <p>Below is the basic minimal usage example.</p>
         <ul za-tab>
-            <li><a href="#">Example</a></li>
-            <li><a href="#">Source</a></li>
+            <li><a href="#">Preview</a></li>
+            <li><a href="#">Markup</a></li>
         </ul>
         <ul class="za-switcher za-margin">
             <li>
@@ -34,13 +35,78 @@
                 </table>
                 <div class="table1Pagination za-margin-top noselect"></div>
             </li>
-            <li>Source</li>
+            <li>
+                <div class="za-overflow-auto" style="height:383px">
+                    <p>HTML code for table:</p>
+                    <pre><code class="html">
+&lt;table class="za-table za-table-divider za-table-striped za-table-hover za-table-responsive za-table-middle" id="table1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th id="table1ID" class="za-table-shrink"&gt;&lt;/th&gt;
+            &lt;th id="table1_name"&gt;name&lt;/th&gt;
+            &lt;th id="table1_email"&gt;E-mail&lt;/th&gt;
+            &lt;th id="table1_status"&gt;Status&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="table1Pagination za-margin-top noselect"&gt;&lt;/div&gt;
+                </code></pre>
+                    <p>JavaScript:</p>
+                    <pre><code class="javascript">
+$('#table1').zoiaTable({
+    url: '/your/data/source',
+    limit: 5,
+    fields: {
+        name: {
+            sortable: false,
+            process: (id, item, value) => {
+                return value;
+            }
+        },
+        email: {
+            sortable: false,
+            process: (id, item, value) => {
+                return value;
+            }
+        },
+        status: {
+            sortable: false,
+            process: (id, item, value) => {
+                switch (value) {
+                    case 0:
+                        return 'Disabled';
+                    case 1:
+                        return 'Active';
+                    case 2:
+                        return 'Administrator';
+                    default:
+                        return '&ndash;';
+                }
+            }
+        }
+    },
+    lang: {
+        error: 'Could not load data from server. Please try to refresh page in a few moments.',
+        noitems: 'No items to display'
+    }
+});              
+                </code></pre>
+                </div>
+            </li>
         </ul>
+        <h2>Filtering by Value</h2>
+        <p>To filter one or more columns by value, you will need the following HTML code (assuming that your table has id="table1"):</p>
+        <pre><code class="html">
+&lt;input type="text" class="table1SearchInput" placeholder="Search"&gt;
+        </code></pre>
     </div>
     <script src="jquery.min.js" type="text/javascript"></script>
     <script src="uikit.min.js" type="text/javascript"></script>
     <script src="uikit-icons.min.js" type="text/javascript"></script>
-    <script src="jquery.zoiaTable.js" type="text/javascript"></script>
+    <script src="highlight.pack.js" type="text/javascript"></script>
+    <script src="jquery.zoiaTable.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     $('#table1').zoiaTable({
         url: '/data{skip}.json',
@@ -79,6 +145,7 @@
             noitems: 'No items to display'
         }
     });
+    hljs.initHighlightingOnLoad();
     </script>
 </body>
 

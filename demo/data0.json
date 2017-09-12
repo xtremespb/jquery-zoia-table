@@ -5,7 +5,7 @@
         "_id": "1",
         "name": "Vassily Demyan",
         "email": "demo1@example.com",
-        "status": 1
+        "status": 0
     },
     {
         "_id": "2",
@@ -17,13 +17,13 @@
         "_id": "3",
         "name": "Lemoine Keefe",
         "email": "demo3@example.com",
-        "status": 1
+        "status": 2
     },
     {
         "_id": "4",
         "name": "Dirk Jemmy",
         "email": "demo4@example.com",
-        "status": 1
+        "status": 0
     },
     {
         "_id": "5",

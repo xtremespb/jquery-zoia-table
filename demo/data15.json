@@ -5,13 +5,13 @@
         "_id": "16",
         "name": "Nazar Fedir",
         "email": "demo16@example.com",
-        "status": 1
+        "status": 2
     },
     {
         "_id": "17",
         "name": "Miron Ivan",
         "email": "demo17@example.com",
-        "status": 1
+        "status": 0
     },
     {
         "_id": "18",

@@ -234,9 +234,12 @@
             let html = '';
             this._loading(true);
             this.loading = true;
+            let url = this._template(this.settings.url, {
+                skip: this.page * this.settings.limit - this.settings.limit
+            });
             $.ajax({
                 type: 'GET',
-                url: this.settings.url,
+                url: url,
                 data: {
                     limit: this.settings.limit,
                     skip: this.page * this.settings.limit - this.settings.limit,
