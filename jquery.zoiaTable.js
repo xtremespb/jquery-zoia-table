@@ -1,8 +1,8 @@
 /* eslint no-extra-semi: 0 */
 /* eslint max-len: 0 */
 /* eslint no-undef: 0 */
-/*! zoiaTable v1.0.0 | (c) Michael A. Matveev | github.com/xtremespb/zoiaTable 
-*/ 
+/*! zoiaTable v1.0.1 | (c) Michael A. Matveev | github.com/xtremespb/zoiaTable 
+*/
 ;
 (($) => {
     'use strict';
@@ -234,12 +234,9 @@
             let html = '';
             this._loading(true);
             this.loading = true;
-            let url = this._template(this.settings.url, {
-                skip: this.page * this.settings.limit - this.settings.limit
-            });
             $.ajax({
                 type: 'GET',
-                url: url,
+                url: this.settings.url,
                 data: {
                     limit: this.settings.limit,
                     skip: this.page * this.settings.limit - this.settings.limit,
@@ -292,6 +289,7 @@
                     if (that.settings.sort.field) {
                         that._sortIndicator(that.settings.sort.field, that.settings.sort.direction);
                     }
+                    $(that.element).find('thead').show();
                     that.settings.onLoad();
                 } else {
                     that.loading = false;
